@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cvsd6ej51y6kl"]
+
+[ext_resource type="Script" uid="uid://brlekuoaytjl3" path="res://Script/UI/win_screen.gd" id="1_oe4ih"]
+
+[node name="WinScreen" type="CanvasLayer" unique_id=753781636]
+script = ExtResource("1_oe4ih")
+
+[node name="Dim" type="ColorRect" parent="." unique_id=801386666]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0038023, 1)
+color = Color(0, 0, 0, 0.26666668)
+
+[node name="Center" type="CenterContainer" parent="." unique_id=1408333305]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center" unique_id=1632647852]
+custom_minimum_size = Vector2(400, 260)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center/Panel" unique_id=1020728290]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Center/Panel/VBox" unique_id=1759107883]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Ты выиграл!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="Center/Panel/VBox" unique_id=1277048468]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KillsLabel" type="Label" parent="Center/Panel/VBox" unique_id=80984629]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Center/Panel/VBox" unique_id=208300270]
+layout_mode = 2
+alignment = 1
+
+[node name="RestartButton" type="Button" parent="Center/Panel/VBox/Buttons" unique_id=1053090454]
+layout_mode = 2
+text = "Перезапустить"
+
+[node name="QuitButton" type="Button" parent="Center/Panel/VBox/Buttons" unique_id=1256196862]
+layout_mode = 2
+text = "Выйти
+"

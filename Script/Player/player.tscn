@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b8387yv5657l3"]
+
+[ext_resource type="Script" uid="uid://y8lmom4kwb7x" path="res://Script/Player/player.gd" id="1_d2cbi"]
+[ext_resource type="SpriteFrames" uid="uid://cq1lydb03cm67" path="res://Animated/Player/player.tres" id="2_royai"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1gyqj"]
+radius = 4.349853
+height = 21.135286
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_royai"]
+size = Vector2(43.125, 21)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6mfp"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gyqj"]
+size = Vector2(44, 50)
+
+[node name="Player" type="CharacterBody2D" unique_id=864742809 groups=["player"]]
+collision_mask = 18
+script = ExtResource("1_d2cbi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=130183091]
+position = Vector2(2, 2)
+scale = Vector2(0.7199999, 0.67999977)
+sprite_frames = ExtResource("2_royai")
+animation = &"run"
+frame_progress = 0.6850413
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2027278982]
+visible = false
+position = Vector2(1, 0)
+scale = Vector2(1.379357, 1.2301702)
+shape = SubResource("CapsuleShape2D_1gyqj")
+
+[node name="Attack1Area2D" type="Area2D" parent="." unique_id=613383092]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack1Area2D" unique_id=1854260487]
+position = Vector2(20.4375, 6.5)
+shape = SubResource("RectangleShape2D_royai")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1707756751]
+offset_left = -18.0
+offset_top = -26.0
+offset_right = 19.0
+offset_bottom = -20.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_a6mfp")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+
+[node name="Attack2Area2D" type="Area2D" parent="." unique_id=1600530433]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack2Area2D" unique_id=211225210]
+position = Vector2(19, 2)
+shape = SubResource("RectangleShape2D_1gyqj")
